@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/JamieBursey/mercer-newhook/static/css/main.f6dd7eac.css",
+    "main.js": "/JamieBursey/mercer-newhook/static/js/main.2366e01e.js",
+    "static/js/787.7714e21b.chunk.js": "/JamieBursey/mercer-newhook/static/js/787.7714e21b.chunk.js",
+    "index.html": "/JamieBursey/mercer-newhook/index.html",
+    "main.f6dd7eac.css.map": "/JamieBursey/mercer-newhook/static/css/main.f6dd7eac.css.map",
+    "main.2366e01e.js.map": "/JamieBursey/mercer-newhook/static/js/main.2366e01e.js.map",
+    "787.7714e21b.chunk.js.map": "/JamieBursey/mercer-newhook/static/js/787.7714e21b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6dd7eac.css",
+    "static/js/main.2366e01e.js"
+  ]
+}
