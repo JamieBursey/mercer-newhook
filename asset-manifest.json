@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mercer-newhook/static/css/main.f6dd7eac.css",
-    "main.js": "/mercer-newhook/static/js/main.04570dae.js",
+    "main.js": "/mercer-newhook/static/js/main.cbd44c80.js",
     "static/js/787.7714e21b.chunk.js": "/mercer-newhook/static/js/787.7714e21b.chunk.js",
     "index.html": "/mercer-newhook/index.html",
     "main.f6dd7eac.css.map": "/mercer-newhook/static/css/main.f6dd7eac.css.map",
-    "main.04570dae.js.map": "/mercer-newhook/static/js/main.04570dae.js.map",
+    "main.cbd44c80.js.map": "/mercer-newhook/static/js/main.cbd44c80.js.map",
     "787.7714e21b.chunk.js.map": "/mercer-newhook/static/js/787.7714e21b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6dd7eac.css",
-    "static/js/main.04570dae.js"
+    "static/js/main.cbd44c80.js"
   ]
 }
