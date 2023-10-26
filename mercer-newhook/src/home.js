@@ -13,7 +13,7 @@ const Home = () => {
       setStatsFunc(stats);
     };
 
-    // Fetching stats for both players
+    // Fetching stats for both players, more to add later if new player joins
     fetchAndSetStats("8482110", setMercerStats); // Dawson Mercer
     fetchAndSetStats("8481618", setNewhookStats); // Alex Newhook
   }, []);
@@ -24,10 +24,13 @@ const Home = () => {
       {stats.map((season, index) => (
         <div key={index}>
           <h5>{season.season}</h5>
+          {season.team && <p>Team: {season.team.name}</p>}
+          {season.league && <p>League: {season.league.name}</p>}
           <p>Goals: {season.stat.goals}</p>
           <p>Assists: {season.stat.assists}</p>
-          <p>points: {season.stat.points}</p>
-          {/* Add more later*/}
+          <p>PIM:{season.stat.pim}</p>
+
+          <p>Points: {season.stat.points}</p>
         </div>
       ))}
     </>
