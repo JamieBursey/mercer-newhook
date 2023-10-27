@@ -6,6 +6,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 const Home = () => {
   const [mercerStats, setMercerStats] = useState([]);
   const [newhookStats, setNewhookStats] = useState([]);
+  const seasonDates = (seasonStr) => {
+    return `${seasonStr.substring(0, 4)}-${seasonStr.substring(4)}`;
+  };
 
   useEffect(() => {
     const fetchAndSetStats = async (playerId, setStatsFunc) => {
@@ -13,7 +16,6 @@ const Home = () => {
       setStatsFunc(stats);
     };
 
-    // Fetching stats for both players, more to add later if new player joins
     fetchAndSetStats("8482110", setMercerStats); // Dawson Mercer
     fetchAndSetStats("8481618", setNewhookStats); // Alex Newhook
   }, []);
@@ -22,16 +24,23 @@ const Home = () => {
     <>
       {stats.length === 0 && <p>No stats available</p>}
       {stats.map((season, index) => (
-        <div key={index}>
-          <h5>{season.season}</h5>
-          {season.team && <p>Team: {season.team.name}</p>}
-          {season.league && <p>League: {season.league.name}</p>}
-          <p>Goals: {season.stat.goals}</p>
-          <p>Assists: {season.stat.assists}</p>
-          <p>PIM:{season.stat.pim}</p>
-
-          <p>Points: {season.stat.points}</p>
-        </div>
+        <Card
+          key={index}
+          style={{
+            marginBottom: "10px",
+            backgroundColor: index % 2 === 0 ? "#D3D3D3" : "beige",
+          }}
+        >
+          <Card.Body>
+            <h5 className="text-danger">{seasonDates(season.season)}</h5>
+            {season.team && <p>Team: {season.team.name}</p>}
+            {season.league && <p>League: {season.league.name}</p>}
+            <p>Goals: {season.stat.goals}</p>
+            <p>Assists: {season.stat.assists}</p>
+            <p>PIM:{season.stat.pim}</p>
+            <p>Points: {season.stat.points}</p>
+          </Card.Body>
+        </Card>
       ))}
     </>
   );
