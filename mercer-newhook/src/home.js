@@ -6,6 +6,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 const Home = () => {
   const [mercerStats, setMercerStats] = useState([]);
   const [newhookStats, setNewhookStats] = useState([]);
+
   const seasonDates = (seasonStr) => {
     return `${seasonStr.substring(0, 4)}-${seasonStr.substring(4)}`;
   };
@@ -48,13 +49,13 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col xs={6}>
           <Card>
             <Card.Header>Dawson Mercer</Card.Header>
             <Card.Body>{renderPlayerStats(mercerStats)}</Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col xs={6}>
           <Card>
             <Card.Header>Alex Newhook</Card.Header>
             <Card.Body>{renderPlayerStats(newhookStats)}</Card.Body>
