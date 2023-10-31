@@ -38,8 +38,16 @@ const Home = () => {
             {season.league && <p>League: {season.league.name}</p>}
             <p>Goals: {season.stat.goals}</p>
             <p>Assists: {season.stat.assists}</p>
+            <p>Shots:{season.stat.shots}</p>
             <p>PIM:{season.stat.pim}</p>
             <p>Points: {season.stat.points}</p>
+            <p>FO%:{season.stat.faceOffPct}</p>
+            <p>Game Winners:{season.stat.gameWinningGoals}</p>
+            <p>OT Goals:{season.stat.overTimeGoals}</p>
+            <p>SH Goals:{season.stat.shortHandedGoals}</p>
+            <p>SH Pointss:{season.stat.shortHandedPoints}</p>
+            <p>Shots Blocked:{season.stat.blocked}</p>
+            <p>Shifts:{season.stat.shifts}</p>
           </Card.Body>
         </Card>
       ))}
