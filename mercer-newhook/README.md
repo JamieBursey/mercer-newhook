@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+https://flashlive-sports.p.rapidapi.com/v1/teams/squad?sport_id=4&locale=en_INT&team_id=Kh0O591A used to get playerID From NewJersey team
+
+//3cea9650ecmsha8caf84f2e33d18p1172f9jsn26df222da8e2

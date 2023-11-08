@@ -7,24 +7,20 @@ const Home = () => {
   const [mercerStats, setMercerStats] = useState([]);
   const [newhookStats, setNewhookStats] = useState([]);
 
-  const seasonDates = (seasonStr) => {
-    return `${seasonStr.substring(0, 4)}-${seasonStr.substring(4)}`;
-  };
-
   useEffect(() => {
     const fetchAndSetStats = async (playerId, setStatsFunc) => {
       const stats = await fetchPlayerStatsById(playerId);
       setStatsFunc(stats);
     };
 
-    fetchAndSetStats("8482110", setMercerStats); // Dawson Mercer
-    fetchAndSetStats("8481618", setNewhookStats); // Alex Newhook
+    fetchAndSetStats("0MhvxaYE", setMercerStats); // Dawson Mercer
+    fetchAndSetStats("AJWeyyJ2", setNewhookStats); // Alex Newhook (Assuming AJWeyyJ2 is the correct ID for Alex Newhook)
   }, []);
 
-  const renderPlayerStats = (stats) => (
+  const renderPlayerStats = (playerStats) => (
     <>
-      {stats.length === 0 && <p>No stats available</p>}
-      {stats.map((season, index) => (
+      {playerStats.length === 0 && <p>No stats available</p>}
+      {playerStats.map((playerStat, index) => (
         <Card
           key={index}
           style={{
@@ -33,21 +29,13 @@ const Home = () => {
           }}
         >
           <Card.Body>
-            <h5 className="text-danger">{seasonDates(season.season)}</h5>
-            {season.team && <p>Team: {season.team.name}</p>}
-            {season.league && <p>League: {season.league.name}</p>}
-            <p>Goals: {season.stat.goals}</p>
-            <p>Assists: {season.stat.assists}</p>
-            <p>Shots:{season.stat.shots}</p>
-            <p>PIM:{season.stat.pim}</p>
-            <p>Points: {season.stat.points}</p>
-            <p>FO%:{season.stat.faceOffPct}</p>
-            <p>Game Winners:{season.stat.gameWinningGoals}</p>
-            <p>OT Goals:{season.stat.overTimeGoals}</p>
-            <p>SH Goals:{season.stat.shortHandedGoals}</p>
-            <p>SH Pointss:{season.stat.shortHandedPoints}</p>
-            <p>Shots Blocked:{season.stat.blocked}</p>
-            <p>Shifts:{season.stat.shifts}</p>
+            <h5 className="text-danger">{playerStat.SEASON_LABEL}</h5>
+            <p>Team: {playerStat.TEAM_NAME}</p>
+            <p>Goals: {playerStat.STATS["1"]}</p>
+            <p>Assists: {playerStat.STATS["2"]}</p>
+            <p>Games Played:{playerStat.STATS["4"]}</p>
+            <p>Points: {playerStat.STATS["9"]}</p>
+            {/* ... more stats fields */}
           </Card.Body>
         </Card>
       ))}
@@ -57,13 +45,13 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        <Col xs={6}>
+        <Col xs={12} md={6}>
           <Card>
             <Card.Header>Dawson Mercer</Card.Header>
             <Card.Body>{renderPlayerStats(mercerStats)}</Card.Body>
           </Card>
         </Col>
-        <Col xs={6}>
+        <Col xs={12} md={6}>
           <Card>
             <Card.Header>Alex Newhook</Card.Header>
             <Card.Body>{renderPlayerStats(newhookStats)}</Card.Body>
