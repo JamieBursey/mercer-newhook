@@ -37,7 +37,6 @@ const Home = () => {
               <p>Assists: {playerStat.STATS["8"]}</p>
               <p>Games Played: {playerStat.STATS["4"]}</p>
               <p>Points: {playerStat.STATS["9"]}</p>
-              {/* ... more stats fields */}
             </Card.Body>
           </Card>
         ))}
@@ -47,13 +46,13 @@ const Home = () => {
   return (
     <Container>
       <Row>
-        <Col xs={12} md={6}>
+        <Col xs={6} md={6}>
           <Card>
             <Card.Header>Dawson Mercer</Card.Header>
             <Card.Body>{renderPlayerStats(mercerStats)}</Card.Body>
           </Card>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={6} md={6}>
           <Card>
             <Card.Header>Alex Newhook</Card.Header>
             <Card.Body>{renderPlayerStats(newhookStats)}</Card.Body>
