@@ -33,9 +33,10 @@ const Home = () => {
             <Card.Body>
               <h5 className="text-danger">{playerStat.SEASON_LABEL}</h5>
               <p>Team: {playerStat.TEAM_NAME}</p>
-              <p>Goals: {playerStat.STATS["2"]}</p>
-              <p>Assists: {playerStat.STATS["4"]}</p>
-              <p>Points: {playerStat.STATS["6"]}</p>
+              <p>Goals: {playerStat.STATS["1"]}</p>
+              <p>Assists: {playerStat.STATS["8"]}</p>
+              <p>Games Played: {playerStat.STATS["4"]}</p>
+              <p>Points: {playerStat.STATS["9"]}</p>
               {/* ... more stats fields */}
             </Card.Body>
           </Card>
