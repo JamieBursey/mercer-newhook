@@ -20,25 +20,26 @@ const Home = () => {
   const renderPlayerStats = (playerStats) => (
     <>
       {playerStats.length === 0 && <p>No stats available</p>}
-      {playerStats.map((playerStat, index) => (
-        <Card
-          key={index}
-          style={{
-            marginBottom: "10px",
-            backgroundColor: index % 2 === 0 ? "#D3D3D3" : "beige",
-          }}
-        >
-          <Card.Body>
-            <h5 className="text-danger">{playerStat.SEASON_LABEL}</h5>
-            <p>Team: {playerStat.TEAM_NAME}</p>
-            <p>Goals: {playerStat.STATS["1"]}</p>
-            <p>Assists: {playerStat.STATS["2"]}</p>
-            <p>Games Played:{playerStat.STATS["4"]}</p>
-            <p>Points: {playerStat.STATS["9"]}</p>
-            {/* ... more stats fields */}
-          </Card.Body>
-        </Card>
-      ))}
+      {playerStats
+        .filter((playerStat) => playerStat.TEAM_NAME !== null) // Filter out stats without a team name
+        .map((playerStat, index) => (
+          <Card
+            key={index}
+            style={{
+              marginBottom: "10px",
+              backgroundColor: index % 2 === 0 ? "#D3D3D3" : "beige",
+            }}
+          >
+            <Card.Body>
+              <h5 className="text-danger">{playerStat.SEASON_LABEL}</h5>
+              <p>Team: {playerStat.TEAM_NAME}</p>
+              <p>Goals: {playerStat.STATS["2"]}</p>
+              <p>Assists: {playerStat.STATS["4"]}</p>
+              <p>Points: {playerStat.STATS["6"]}</p>
+              {/* ... more stats fields */}
+            </Card.Body>
+          </Card>
+        ))}
     </>
   );
 
