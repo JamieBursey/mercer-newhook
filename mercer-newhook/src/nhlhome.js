@@ -35,7 +35,7 @@ const HomeNhl = () => {
     return (
       <div key={index} className="row mb-3">
         <div className="col">
-          <div className="card bg-info">
+          <div className="card shadow rounded border border-primary">
             <div className="card-body">
               <h5 className="card-title">{season.leagueAbbrev}</h5>
               <h6 className="card-subtitle mb-2 text-danger">
@@ -88,11 +88,20 @@ const HomeNhl = () => {
   };
 
   const renderPlayerCard = (playerStats) => {
-    const { firstName, lastName, seasonTotals } = playerStats;
+    if (!playerStats) {
+      return <div>Loading...</div>;
+    }
+
+    const { firstName, lastName, seasonTotals, headshot } = playerStats;
     const reversedSeasonTotals = [...seasonTotals].reverse();
     return (
       <div>
-        <h3>{`${firstName.default} ${lastName.default}`}</h3>
+        <h4>{`${firstName.default} ${lastName.default}`}</h4>
+        <img
+          src={headshot}
+          style={{ width: "100px", height: "100px", objectFit: "cover" }}
+          alt={`${firstName.default} ${lastName.default}`}
+        />
         {reversedSeasonTotals.map(renderSeasonCard)}
       </div>
     );
@@ -101,8 +110,8 @@ const HomeNhl = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col">{renderPlayerCard(mercerStats)}</div>
         <div className="col">{renderPlayerCard(newhookStats)}</div>
+        <div className="col">{renderPlayerCard(mercerStats)}</div>
       </div>
     </div>
   );
