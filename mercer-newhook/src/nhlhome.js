@@ -29,7 +29,6 @@ const HomeNhl = () => {
     fetchAndSetStats("8481618", setMercerStats);
     fetchAndSetStats("8482110", setNewhookStats);
   }, []);
-
   const renderSeasonCard = (season, index) => {
     const formattedSeason = formatSeason(season.season);
     return (
@@ -96,7 +95,14 @@ const HomeNhl = () => {
     const reversedSeasonTotals = [...seasonTotals].reverse();
     return (
       <div>
-        <h4>{`${firstName.default} ${lastName.default}`}</h4>
+        <div className="row">
+          <div className="col-12 text-center">
+            <h4>{firstName.default}</h4>
+          </div>
+          <div className="col-12 text-center">
+            <h4>{lastName.default}</h4>
+          </div>
+        </div>
         <img
           src={headshot}
           style={{ width: "100px", height: "100px", objectFit: "cover" }}
@@ -108,7 +114,7 @@ const HomeNhl = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container bg-dark-subtle">
       <div className="row">
         <div className="col">{renderPlayerCard(newhookStats)}</div>
         <div className="col">{renderPlayerCard(mercerStats)}</div>

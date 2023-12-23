@@ -5,7 +5,7 @@ import HomeNhl from "./nhlhome";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark-subtle">
       <HomeNhl />
     </div>
   );
